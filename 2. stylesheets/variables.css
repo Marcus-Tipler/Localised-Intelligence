@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    --borders: 2px;
+}
+
+:root {
+    --text-color: #343541;
+    --icon-color: #a9a9bc;
+    --icon-hover-bg: #f1f1f3;
+    --placeholder-color: #9f9f9f;
+    --outgoing-chat-bg: #ffffff;
+    --incoming-chat-bg: #f7f7f8;
+    --outgoing-chat-border: #ffffff;
+    --incoming-chat-border: #d9d9e3;
+    --bg-image: url("/1. Images/login-bg.png");
+    --login-btn: #1c4772;
+    --brand-clr: #0a3e72;
+    --inv-text-color: #FFFFFF;
+    --inv-icon-color: #ACACBE;
+    --inv-icon-hover-bg: #5b5e71;
+    --inv-placeholder-color: #cccccc;
+    --inv-outgoing-chat-bg: #343541;
+    --inv-incoming-chat-bg: #444654;
+    --inv-outgoing-chat-border: #343541;
+    --inv-incoming-chat-border: #444654;
+}
+.light-mode {
+    --text-color: #FFFFFF;
+    --icon-color: #ACACBE;
+    --icon-hover-bg: #5b5e71;
+    --placeholder-color: #cccccc;
+    --outgoing-chat-bg: #343541;
+    --incoming-chat-bg: #444654;
+    --outgoing-chat-border: #343541;
+    --incoming-chat-border: #444654;
+    --bg-image: url("/1. Images/background-edit-dark.png");
+    --login-btn: #6cc2df;
+    --brand-clr: #4fbbde;
+    --inv-text-color: #343541;
+    --inv-icon-color: #a9a9bc;
+    --inv-icon-hover-bg: #f1f1f3;
+    --inv-placeholder-color: #9f9f9f;
+    --inv-outgoing-chat-bg: #ffffff;
+    --inv-incoming-chat-bg: #f7f7f8;
+    --inv-outgoing-chat-border: #ffffff;
+    --inv-incoming-chat-border: #d9d9e3;
+}

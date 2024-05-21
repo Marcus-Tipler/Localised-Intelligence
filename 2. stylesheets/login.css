@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: var(--bg-image);
+}
+
+a:-webkit-any-link {
+  color: var(--login-btn);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+span[id^='loginnav-btn-']{
+    margin: 9px 0px;
+    user-select: none;
+    cursor: pointer;
+    /*background: var(--outgoing-chat-bg);*/
+    color: var(--text-color);
+    border: 1px solid var(--outgoing-chat-bg);
+}
+span[id^='loginnav-btn-']:hover {
+    /*background: var(--icon-hover-bg);*/
+    border: 1px solid var(--incoming-chat-border);
+}
+p#login-title {
+    margin: 10px;
+    color: var(--text-color);
+}
+
+/* FORM CONTENTS STARTS HERE */
+/* FORM CONTENTS STARTS HERE */
+/* FORM CONTENTS STARTS HERE */
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    color: var(--text-color);
+    box-sizing: border-box;
+    background: var(--incoming-chat-bg);
+    outline: 1px solid var(--incoming-chat-border);
+  }
+  
+  button {
+    background-color: var(--login-btn);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+  }
+  
+  img.default-avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+  
+  .window-container {
+    padding: 16px;
+    color: var(--text-color);
+  }
+  .window-lowercontainer {
+    padding: 16px;
+    color: var(--text-color);
+    background-color: var(--incoming-chat-bg);
+  }
+
+  span.psw {
+    float: right;
+    padding-left: 16px;
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+  }

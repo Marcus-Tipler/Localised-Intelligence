@@ -1,0 +1,346 @@
+body {
+    margin: 0;
+    background: var(--outgoing-chat-bg);
+    position: fixed; /* THIS VALUE FIXES PAGE OVERFLOWS FOR THE TEXT BOX */
+}
+span[id^='nav-icon-']{
+    margin-top: 14px;
+    user-select: none;
+    cursor: pointer;
+    /*background: var(--outgoing-chat-bg);*/
+    color: var(--text-color);
+    border: 1px solid var(--outgoing-chat-bg);
+}
+span[id^='nav-icon-']:hover {
+    /*background: var(--icon-hover-bg);*/
+    border: 1px solid var(--incoming-chat-border);
+}
+span[id^='side-bar-btn-']{
+    margin-top: 14px;
+    user-select: none;
+    cursor: pointer;
+    /*background: var(--outgoing-chat-bg);*/
+    color: var(--text-color);
+    border: 1px solid var(--outgoing-chat-bg);
+}
+span[id^='side-bar-btn-']:hover {
+    /*background: var(--icon-hover-bg);*/
+    border: 1px solid var(--incoming-chat-border);
+}
+/*----------------------------------------------------------------*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--outgoing-chat-bg);
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: var(--text-color);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: var(--icon-hover-bg);
+}
+
+.active {
+  background-color: var(--icon-hover-bg);
+}
+/*------------------------------------*/
+
+
+.nav-bar {
+    width: 100vw;
+    /* height: 5vh; */
+    align-items: center;
+    justify-items: center;
+    justify-content: space-between;
+    border: var(--borders) solid var(--incoming-chat-border);
+}
+.nav-bar span {
+    font-size: 1.5rem;
+    margin: 13px 9px 9px 9px;
+}
+li#web-page-title {
+    margin: 13px 9px 9px 9px;
+    color: var(--text-color);
+}
+.nav-bar .user-logo-nav {
+    width: 35px;
+    height: 35px;
+    border-radius: 2px;
+    align-self: flex-start;
+    object-fit: cover;
+    margin: 7px;
+}
+.nav-bar .site-logo-nav {
+    width: 100px;
+    height: 35px;
+    border-radius: 2px;
+    align-self: flex-start;
+    object-fit: cover;
+    margin: 7px;
+}
+.page-container {
+    display: flex;
+}
+.side-bar {
+    float : left;
+    width: 150px;
+    height: calc(100vh - 6vh);
+    border-right: var(--borders) solid var(--incoming-chat-border);
+}
+.side-list {
+    min-width: max-content;
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; THIS ALIGNS CHAT ITEMS WHY NOT SIDE LIST? */
+    align-items: center;
+    background-color: var(--outgoing-chat-bg);
+    border-bottom: var(--borders) solid var(--incoming-chat-border);
+}
+.side-list span {
+    font-size: 1.4rem;
+    border-radius: 4px;
+}
+.chat-selector {
+    display: grid;
+    padding: 10px;
+    align-items: self-start;
+    color: var(--text-color);
+}
+
+.chat-box {
+    flex-grow: 3;
+    height: calc(100vh - 6vh);
+    width: 50vw;
+}
+.chat-container {
+    /* display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: calc(100% - 100px) ;
+    text-align: center;
+    color: var(--text-color);
+    max-height: 100vh;
+    overflow-y: auto; */
+    padding-bottom: 100px;
+    padding-top: 100px;
+    overflow: scroll;
+    max-height: 100%;
+    min-height: 100%;
+}
+.text-default {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: calc(100% - 100px) ;
+    text-align: center;
+    color: var(--text-color);
+    max-height: 100vh;
+    overflow-y: auto;
+    border: 0;
+}
+/* DEFAULT TEXT area */
+.default-text h1 {
+    font-size: 3.3rem;
+}
+.default-text p {
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+/* START OF CHATGPT IMPLEMENTATION */
+:where(.chat-container, textarea)::-webkit-scrollbar {
+    width: 6px;
+}
+:where(.chat-container, textarea)::-webkit-scrollbar-track {
+    background: var(--incoming-chat-bg);
+    border-radius: 25px;
+}
+:where(.chat-container, textarea)::-webkit-scrollbar-thumb {
+    background: var(--icon-color);
+    border-radius: 25px;
+}
+.chat-container .chat {
+    padding: 25px 10px;
+    display: flex;
+    justify-content: center;
+    color: var(--text-color);
+}
+.chat-container .chat.outgoing {
+    background: var(--outgoing-chat-bg);
+    border: 1px solid var(--outgoing-chat-border);
+}
+.chat-container .chat.incoming {
+    background: var(--incoming-chat-bg);
+}
+.chat .chat-content {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.chat .chat-content:not(has(.typing-animation, .error)) span {
+    font-size: 1.3rem;
+    color: var(--icon-color);
+    visibility: hidden;
+}
+.chat:hover .chat-content span {
+    visibility: visible;
+}
+.chat .chat-details {
+    display: flex;
+    align-items: center;
+}
+.chat .chat-details img {
+    width: 35px;
+    height: 35px;
+    align-self: flex-start;
+    object-fit: cover;
+    border-radius: 2px;
+}
+.chat .chat-details p {
+    white-space: pre-wrap;
+    font-size: 1.05rem;
+    padding: 0 50px 0 25px;
+}
+.chat .chat-details p.error {
+    color: #e55865;
+}
+.chat .typing-animation {
+    display: inline-flex;
+    padding-left: 25px;
+}
+.chat .typing-animation .typing-dot {
+    height: 7px;
+    width: 7px;
+    opacity: 0,7;
+    margin: 0 3px;
+    border-radius: 50%;
+    background: var(--text-color);
+    animation: animateDots 1.5s var(--delay) ease-in-out infinite;
+}
+@keyframes animateDots {
+    0%, 44% {
+        transform: translateY(0px)
+    }
+    22% {
+        opacity: 0.4;
+        transform: translateY(-6px)
+    }
+    44% {
+        opacity: 0.2;
+    }
+}
+.typing-container .typing-content {
+    /* max-width: 950px; */
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+.typing-content .typing-textarea {
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+.typing-textarea textarea {
+    width: 100%;
+    height: 55px;
+    border: none;
+    resize: none;
+    font-size: 1rem;
+    max-height: 250px;
+    overflow-y: auto;
+    border-radius: 4px;
+    color: var(--text-color);
+    padding: 15px 45px 15px 20px;
+    background: var(--incoming-chat-bg);
+    outline: 1px solid var(--incoming-chat-border);
+}
+.typing-textarea textarea::placeholder{
+    color: var(--placeholder-color);
+}
+.typing-textarea span {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    visibility: hidden;
+}
+.typing-textarea textarea:valid ~ span {
+    visibility: visible;
+}
+.typing-content span {
+    height: 50px;
+    width: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--icon-color);
+}
+.typing-controls {
+    display: flex;
+
+}
+.typing-controls span {
+    margin-left: 7px;
+    font-size: 1.4rem;
+    border-radius: 4px;
+    background: var(--incoming-chat-bg);
+    border: 1px solid var(--incoming-chat-border)
+}
+/* END OF CHATGPT IMPLEMENTATION */
+
+
+/* TYPING area */
+.typing-container {
+    position: fixed; /* KEEP AS FIXED: Keeps the chat box at minimum height and allows for overflow on above chat box */
+    box-sizing: border-box; /* Fixes the padding + width issues */
+    bottom: 0;
+    width: calc(100% - 150px) ; 
+    display: flex; /* This fixed the alignment of the text box - no longer off screen */
+    padding: 20px 10px 20px 10px;
+    background: var(--outgoing-chat-bg);
+    justify-content: center;
+}
+/* FIX PROBLEM HERE WITH POSITIONING OF TEXT BOX */
+.typing-content {
+/*.typing-container .typing-content { */
+    width: 100% ; /* backup 78 CHANGED FROM 100% - affects chat box container size and everything in it */
+    /* display: flex;
+    align-items: flex; */
+}
+.typing-content .typing-textarea {
+    width: 100%; /* CHANGED FROM 100% - affects the chat box itself */
+    display: flex;
+    position: relative;
+}
+/* FIX PROBLEM HERE WITH POSITIONING OF TEXT BOX */
+.typing-textarea textarea {
+    width: 100%; /* ALSO AFFECTS CHAT BOX WTF */
+    height: 55px;
+    border: none;
+    resize: none;
+    font-size: 1rem;
+    max-height: 250px;
+    overflow-y: auto;
+    border-radius: 4px;
+    color: var(--text-color);
+    padding: 15px 20px 15px 20px;
+    background: var(--incoming-chat-bg);
+    outline: 1px solid var(--incoming-chat-border);
+}
+.typing-textarea textarea::placeholder{
+    color: var(--placeholder-color);
+}

@@ -1,0 +1,99 @@
+.window {
+    width: 600px;
+    height: 400px;
+    min-width: 400px; /* WAS 400 */
+    min-height: 400px; /* WAS 680 */
+    position: absolute;
+  }
+  
+  .window .resizer {
+    position: absolute;
+    z-index: 1;
+    width: 22px;
+    height: 22px;
+    background: 0;
+  }
+  
+  .window .resizer.corner {
+    z-index: 2;
+  }
+  
+  .window .resizer.corner.tl {
+    cursor: nw-resize;
+    top: -5px;
+    left: -5px;
+  }
+  
+  .window .resizer.corner.tr {
+    cursor: ne-resize;
+    top: -5px;
+    right: -5px;
+  }
+  
+  .window .resizer.corner.bl {
+    cursor: sw-resize;
+    bottom: -5px;
+    left: -5px;
+  }
+  
+  .window .resizer.corner.br {
+    cursor: se-resize;
+    bottom: -5px;
+    right: -5px;
+  }
+  
+  .window .resizer.t, .window .resizer.b {
+    width: 100%;
+    height: 14px;
+  }
+  
+  .window .resizer.l, .window .resizer.r {
+    width: 14px;
+    height: 100%;
+  }
+  
+  .window .resizer.t {
+    cursor: n-resize;
+    top: -5px;
+  }
+  
+  .window .resizer.b {
+    cursor: s-resize;
+    bottom: -5px;
+  }
+  
+  .window .resizer.l {
+    cursor: w-resize;
+    left: -5px;
+  }
+  
+  .window .resizer.r {
+    cursor: e-resize;
+    right: -5px;
+  }
+  
+  .window .body {
+    border-radius: 10px; /* Gives rounded edges to the window */
+    overflow: hidden;
+    height: 100%;
+    /*background: #f4f4f4;*/
+    border: var(--borders) solid var(--incoming-chat-border);
+    background: var(--outgoing-chat-bg);
+  }
+  
+  .window .body .topbar {
+    width: 100%;
+    height: 50px;
+    /*background: #8c8c8c;*/
+    display: flex;
+    align-items: center;
+    /*justify-content: flex-end;*/
+    padding: 0 10px;
+    border-bottom: var(--borders) solid var(--incoming-chat-border);
+  }
+
+
+  p#window-title {
+    margin: 10px;
+    color: var(--text-color);
+  }

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>Supply Chain Business Council</title>
+    <link rel="stylesheet" href="/2. stylesheets/style.css">
+    <link rel="stylesheet" href="/2. stylesheets/variables.css">
+    <link rel="stylesheet" href="/2. stylesheets/window-mngt.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+</head>
+
+
+<body>
+
+<div class="nav-bar"> <!-- START AND END OF NAVIGATION BAR -->
+    <ul>
+        <img class="site-logo-nav" src="/1. Images/Logo.jpg" style="float:left" alt="site logo">
+        <span id="nav-icon-chat" style="float:left" class="material-symbols-rounded">forum</span>
+        <li id="web-page-title"><p>Business Supply Chain AI</p></li>
+        <img class="user-logo-nav" src="/1. Images/user.jpg" style="float:right" alt="user temp logo">
+        <span id="nav-icon-download" class="material-symbols-rounded" style="float:right">save_as</span>
+        <span id="nav-icon-delete" class="material-symbols-rounded" style="float:right">delete</span>
+        <span id="nav-icon-theme" class="material-symbols-rounded" style="float:right">dark_mode</span>
+    </ul>
+</div> <!-- START AND END OF NAVIGATION BAR -->
+
+
+
+<div class="page-container"> <!-- START OF PAGE CONTAINERS -->
+
+   <div class="side-bar"> <!-- START OF SIDE BAR -->
+        <div class="side-list">
+            <ul>
+                <span id="side-bar-btn-delete" class="material-symbols-rounded">delete</span>
+                <span id="side-bar-btn-add" class="material-symbols-rounded" onclick="showMore()">person_add</span>
+                <span id="side-bar-btn-duplicate" class="material-symbols-rounded">content_paste</span>
+            </ul>
+        </div>
+
+        <div class="chat-selector" id="chat-list">
+            <button onclick="selectedgpt()">TEST - ChatGPT</button>
+            <button onclick="selectedpaul()">TEST - PAUL</button>
+            <label for="model-select" class="form-label me-2" style="font-size: smaller;">Model:</label>
+            <select class="form-select" id="model-select" style="width: auto;"></select>
+        </div>
+   </div> <!-- END OF SIDE BAR -->
+
+   <div class="chat-box"> <!-- START OF CHAT BOX -->
+        <div class="chat-container"> <!-- END OF CHAT BOX -->
+            <!-- DEFAULT TEXT GOES BELLOW HERE -->
+            <!-- THIS IS WHERE THE JS FILE INSERTS HTML CONTAINER FOR THE CHAT IN QUESTION -->
+            <!-- DEFAULT TEXT GOES ABOVE HERE -->
+        </div>
+        <div class="typing-container"> 
+        <!-- typing container start -->
+            <div class="typing-content">
+                <div class="typing-textarea">
+                    <textarea id="chat-input" placeholder="Ask ChatGPT anything!" required></textarea>
+                </div>
+            </div>
+        <!-- typing container end -->
+        </div>
+   </div>
+
+<!-- BOT SELECTION WINDOW-->
+<div class="logon-container"> <!-- START OF PAGE CONTAINERS -->
+<!-- JAVASCRIPT FOR EVNTLSTNER GOES HERE WITH INTERNAL WINDOW MANAGEMENT -->
+</div> <!-- END OF PAGE CONTAINERS -->
+<!-- END OF BOT SELECTION WINDOW -->
+
+
+</div> <!-- END OF PAGE CONTAINERS -->
+
+</body>
+
+<footer>
+    <div class="injection">
+        <!-- TODO: INJECTION GOES HERE DEPENDING ON CONVERSATION -->
+    </div>
+    <script type="module" src="/2. javascript/index.js"></script>
+</footer>
+</html>
+    

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <title>Supply Chain Business Council</title>
+  <link rel="stylesheet" href="/2. stylesheets/style.css">
+  <link rel="stylesheet" href="/2. stylesheets/login.css">
+  <link rel="stylesheet" href="/2. stylesheets/variables.css">
+  <link rel="stylesheet" href="/2. stylesheets/window-mngt.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+  <script src="/2. javascript/login.js" defer></script>
+  <!--<style>
+    body {
+      background-image: url("/1. Images/login-bg.png");
+    }
+  </style> -->
+</head>
+
+
+<body>
+<div class="nav-bar"> <!-- START AND END OF NAVIGATION BAR -->
+  <ul>
+    <img class="site-logo-nav" src="/1. Images/Logo.jpg" style="float:left" alt="site logo">
+    <span id="nav-icon-chat" style="float:left" class="material-symbols-rounded" class="test-class">handshake</span>
+    <li id="web-page-title"><p>Business Supply Chain Login</p></li>
+    <img class="user-logo-nav" src="/1. Images/user.jpg" style="float:right" alt="user temp logo">
+    <span id="nav-icon-theme" class="material-symbols-rounded" style="float:right" class="test-class">dark_mode</span>
+  </ul>
+</div> <!-- START AND END OF NAVIGATION BAR -->
+
+
+<div class="logon-container"> <!-- START OF PAGE CONTAINERS -->
+    <!-- 
+      THIS IS TO GO IN JAVASCRIPT
+    -->
+  <div class="window" style="left: 25vw; top: 10vh;">
+    <div class="resizer corner tl"></div>
+    <div class="resizer corner tr"></div>
+    <div class="resizer corner bl"></div>
+    <div class="resizer corner br"></div>
+    <div class="resizer t"></div>
+    <div class="resizer b"></div>
+    <div class="resizer l"></div>
+    <div class="resizer r"></div>
+
+      <div class="body">
+        <div class="topbar">
+
+          <!-- add buttons here -->
+          <div class="btns">
+            <span href="/index.html" id="loginnav-btn-close" class="material-symbols-rounded">cancel</span>
+            <p id="login-title" style="float: right">Please Sign-In to continue.</p>
+          </div>
+          <!-- add buttons here -->
+
+        </div>
+        <!-- your content here -->
+        <form action="/action_page.php" method="post">
+        <div class="imgcontainer">
+          <img src="/1. Images/user.png" alt="Login Default Avatar" class="default-avatar">
+        </div>
+        
+        <div class="window-container">
+          <label for="uname"><b>E-Mail</b></label>
+          <input type="text" placeholder="Enter E-Mail Address" name="uname" required>
+        
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+                
+          <button type="submit">Login</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+        
+        <div class="window-lowercontainer">
+          <span class="psw">Forgot <a href="#">password?</a></span>
+          <span>This site is locked for Internal Use only, there is no signing up.</span>
+        </div>
+        </form>
+        <!-- your content here -->
+      </div>
+  </div>
+    <!-- 
+        THIS IS TO GO IN JAVASCRIPT
+    -->
+</div> <!-- END OF PAGE CONTAINERS -->
+
+
+</body>
+
+
+<footer>
+  <script src="/2. javascript/theme.js"></script>
+</footer>
+
+</html>
+    
